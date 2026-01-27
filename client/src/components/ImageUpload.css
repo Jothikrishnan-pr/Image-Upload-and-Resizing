@@ -1,0 +1,184 @@
+/* 🌌 ANIMATED BACKGROUND */
+/* 🌌 FULL BLEED ANIMATED NEON BACKGROUND (NO BLACK SIDES) */
+.cosmic-bg {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    120deg,
+    #120018,
+    #001233,
+    #240015
+  );
+  background-size: 300% 300%;
+  animation: gradientFlow 14s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* REMOVE THE DARK OVERLAY COMPLETELY */
+.cosmic-bg::before {
+  display: none;
+}
+
+
+@keyframes bgFlow {
+  0% { transform: translateX(-15%); }
+  50% { transform: translateX(15%); }
+  100% { transform: translateX(-15%); }
+}
+
+/* ✨ SPARKS */
+.spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  animation: sparkFloat 7s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.spark:nth-child(even) { background: #ff4d6d; }
+.spark:nth-child(odd) { background: #4da3ff; }
+
+@keyframes sparkFloat {
+  0% { transform: translateY(0); opacity: 0.2; }
+  50% { transform: translateY(-25px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.2; }
+}
+
+/* random positions */
+.s0 { top: 10%; left: 20%; }
+.s1 { top: 30%; left: 70%; }
+.s2 { top: 60%; left: 40%; }
+.s3 { top: 80%; left: 60%; }
+.s4 { top: 15%; left: 85%; }
+.s5 { top: 50%; left: 10%; }
+.s6 { top: 70%; left: 80%; }
+.s7 { top: 25%; left: 45%; }
+.s8 { top: 40%; left: 90%; }
+.s9 { top: 85%; left: 30%; }
+.s10 { top: 65%; left: 15%; }
+.s11 { top: 20%; left: 55%; }
+.s12 { top: 90%; left: 75%; }
+.s13 { top: 45%; left: 25%; }
+
+/* 💎 CARD */
+.neon-card {
+  width: 460px;
+  padding: 36px;
+  border-radius: 24px;
+  background: rgba(16, 18, 35, 0.7);
+  backdrop-filter: blur(18px);
+  text-align: center;
+  color: #fff;
+  box-shadow:
+    0 0 35px rgba(255, 50, 80, 0.35),
+    0 0 35px rgba(60, 120, 255, 0.35);
+}
+
+.neon-card h2 {
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+/* 📤 UPLOAD ZONE (NO DARK HOVER BG) */
+.upload-zone {
+  display: block;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px dashed rgba(255,255,255,0.35);
+  cursor: pointer;
+}
+
+.upload-zone input {
+  display: none;
+}
+
+🖼 PREVIEWS
+.preview-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+
+.preview-box {
+  display: inline-flex;          /* shrink to content */
+  padding: 3px;                  /* thin gradient border */
+  border-radius: 14px;
+  background: linear-gradient(120deg, #ff4d6d, #4da3ff);
+  animation: glowPulse 3s infinite alternate;
+  line-height: 0;                /* remove extra vertical space */
+}
+
+
+.preview-box img {
+  display: block;                /* removes inline spacing */
+  width: 80px;                   /* or auto if you want natural size */
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+
+@keyframes glowPulse {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.4); }
+}
+
+/* 🔥 BUTTON */
+.neon-btn {
+  width: 100%;
+  margin-top: 28px;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(90deg, #ff4d6d, #4da3ff);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  box-shadow: 0 0 25px rgba(255, 80, 120, 0.6);
+}
+
+.neon-btn:hover {
+  transform: scale(1.05);
+}
+
+.neon-btn.loading {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* MESSAGE */
+.msg {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.success { color: #7dffb3; }
+.error { color: #ff9b9b; }
+
+/* SHAKE */
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
